@@ -1,4 +1,4 @@
-### Check symple FastAPI speed:
+### Check simple FastAPI speed:
 ```commandline
 docker-compose -f compose-fast.yml up --build
 ```
@@ -15,7 +15,7 @@ src-test_server-1  | Process 1000 calls in 1.0720941305160523 seconds
 src-test_server-1  | Errors 0.0%
 ```
 
-### Check symple RabbitMQ RPC speed:
+### Check simple RabbitMQ RPC speed:
 ```commandline
 docker-compose -f compose-rabbit.yml up --build
 ```
