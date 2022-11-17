@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker_rabbit_server
+    command: sh -c 'python rabbit-server.py';
+    depends_on:
+      - rabbit
+  test_server:
+    build:
+      context: .
+      dockerfile: docker_rabbit_test
+    command: sh -c 'python test-rabbit.py';
+    depends_on:
+      - server
+      - rabbit
+  rabbit:
+    image: rabbitmq:3.11-alpine
+    ports:
+      - "5672:5672"
